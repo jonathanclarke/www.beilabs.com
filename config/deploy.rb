@@ -3,7 +3,7 @@ set :stages, %w(staging production)
 set :default_stage, "production"
 require 'capistrano/ext/multistage'
 
-set :application, "www.beilabs.com"
+set :application, "beilabs.com"
 default_run_options[:pty] = true
 
 set :user, "jonathan"
@@ -12,9 +12,9 @@ set :branch, "master"
 set :repository,  "git@github.com:westwickfarrow/events.wf.net.au"
 set :port, 22
 
-role :web, "www.beilabs.com"                          # Your HTTP server, Apache/etc
-role :app, "www.beilabs.com"                          # This may be the same as your `Web` server
-role :db,  "www.beilabs.com", :primary => true        # This is where Rails migrations will run
+role :web, "beilabs.com"                          # Your HTTP server, Apache/etc
+role :app, "beilabs.com"                          # This may be the same as your `Web` server
+role :db,  "beilabs.com", :primary => true        # This is where Rails migrations will run
 
 after "deploy:update_code", "bundler:bundle_new_release", "deploy:symbolic_links"
 
