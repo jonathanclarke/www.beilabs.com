@@ -9,7 +9,7 @@ default_run_options[:pty] = true
 set :user, "jonathan"
 set :scm, "git"
 set :branch, "master"
-set :repository,  "git@github.com:westwickfarrow/events.wf.net.au"
+set :repository,  "git@github.com:beilabs/events.wf.net.au"
 set :port, 22
 
 role :web, "beilabs.com"                          # Your HTTP server, Apache/etc
