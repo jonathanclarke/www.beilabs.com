@@ -10,3 +10,4 @@ vendor/bundler_gems
 tmp/
 .sass-cache
 db/schema.rb
+db/development.sqlite3
