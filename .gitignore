@@ -1,0 +1,12 @@
+.bundle/
+log/
+.*~
+config/database.yml
+*.css
+public/system
+coverage
+coverage.data
+vendor/bundler_gems
+tmp/
+.sass-cache
+db/schema.rb
