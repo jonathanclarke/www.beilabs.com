@@ -33,7 +33,7 @@ end
 
 namespace :misc do
   task :update_last_commit, :roles => :app do
-    run "cd #{release_path} && script/runner Meta.last_commit"
+    Meta.last_commit
   end
 end
 
