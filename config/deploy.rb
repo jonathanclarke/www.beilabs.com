@@ -36,7 +36,6 @@ namespace :bundler do
     shared_dir = File.join(shared_path, 'bundle')
     release_dir = File.join(current_release, '.bundle')
     run("mkdir -p #{shared_dir}")
-    run("mkdir -p /u/app/wee")
     run "ln -nfs #{shared_path}/bundle #{release_path}/.bundle"
     run "ln -nfs #{shared_path}/bundler_gems #{release_path}/vendor/bundler_gems"
   end
