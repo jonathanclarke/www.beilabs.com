@@ -16,7 +16,7 @@ role :web, "beilabs.com"                          # Your HTTP server, Apache/etc
 role :app, "beilabs.com"                          # This may be the same as your `Web` server
 role :db,  "beilabs.com", :primary => true        # This is where Rails migrations will run
 
-after "deploy:update_code", "bundler:bundle_new_release", "deploy:symbolic_links"
+after "deploy:update_code", "bundler:bundle_new_release", "deploy:symbolic_links", "misc:update_last_commit"
 
 namespace :deploy do
   task :start do ; end
@@ -28,6 +28,12 @@ namespace :deploy do
   desc "Make symlink for database yaml"
   task :symbolic_links do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  end
+end
+
+namespace :misc do
+  task :update_last_commit, :roles => :app do
+    run "cd #{release_path} && script/runner Meta.last_commit"
   end
 end
 
