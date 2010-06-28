@@ -10,3 +10,4 @@ Rails::Initializer.run do |config|
   config.time_zone = 'UTC'
 end
 Sass::Plugin.options[:style] = :compressed
+Haml::Template.options[:format] = :html5
