@@ -5,20 +5,36 @@ Feature: Manage homepage
 
   Scenario: Homepage Layout
     Given I am on the home page
-    Then I should see "Beilabs.com" within "h1"
-    Then I should see "Blog" within "ul li"
-    Then I should see "Twitter" within "ul li"
-    Then I should see "GitHub" within "ul li"
-    Then I should see "Last.Fm" within "ul li"
-    Then I should see "Facebook" within "ul li"
+    Then I should see "Jonathan Clarke" within "#wrapper #header h1 a"
+    Then I should see "is a software engineer hailing from Kerry, Ireland who has a love of the web, engineering and all things charitable." within "#wrapper #header h1"
 
-    Then I should see "My Startup" within "h2"
-    Then I should see "GiveFoo" within "ul li"
-    Then I should see "Get in touch" within "h2"
+    When I follow "Jonathan Clarke"
+    Then I should be on the home page
 
-    Then I should see "Email:" within "ul li label"
-    Then I should see "jonathan@beilabs.com" within "ul li"
-    Then I should see "Google Talk:" within "ul li label"
-    Then I should see "jonathan@beilabs.com" within "ul li"
-    Then I should see "Skype:" within "ul li label"
-    Then I should see "jonathan.givefoo.com" within "ul li"
+
+    Then I should see "My stuff on the web" within "#wrapper #content section h1"
+    Then I should see "Blog" within "#wrapper #content section ul.block li"
+    Then I should see "Twitter" within "#wrapper #content section ul.block li"
+    Then I should see "GitHub" within "#wrapper #content section ul.block li"
+    Then I should see "Linked-in" within "#wrapper #content section ul.block li"
+    Then I should see "Last.Fm" within "#wrapper #content section ul.block li"
+    Then I should see "Facebook" within "#wrapper #content section ul.block li"
+
+
+    Then I should see "My startup" within "#wrapper #content section h1"
+    Then I should see "GiveFoo" within "#wrapper #content section ul li a"
+    Then I should see "E-Commerce for the developing world" within "#wrapper #content section ul li"
+    Then I should see "( October 2010 )" within "#wrapper #content section ul li span"
+
+    Then I should see "Get in touch" within "#wrapper #content section h1"
+
+    Then I should see "Email:" within "#wrapper #content section ul li label"
+    Then I should see "jonathan@beilabs.com" within "#wrapper #content section ul li"
+    Then I should see "Skype:" within "#wrapper #content section ul li label"
+    Then I should see "jonathan.givefoo.com" within "#wrapper #content section ul li"
+
+
+    Then I should see "Where am I?" within "#wrapper #content section h1"
+    Then I should see "I have been working for:" within "#wrapper #content section h1"
+    Then I should see "I'm a member of these amazing groups" within "#wrapper #content section h1"
+    Then I should see "I love to use these tools" within "#wrapper #content section h1"
