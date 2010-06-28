@@ -47,7 +47,7 @@ namespace :bundler do
   end
 
   task :after_update_code, :roles => [:app, :db, :web] do
-
+    run "cd #{release_path} && script/runner Meta.last_commit"
     run "cd #{release_path} && rake asset:packager:build_all"
     run "for file in $(find #{release_path}/public/javascripts \\
       -name '*.js'); do gzip $file -f -c > $file.gz; done"

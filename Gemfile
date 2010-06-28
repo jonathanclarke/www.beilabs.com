@@ -5,6 +5,7 @@ gem "rails", "2.3.5"
 gem "haml"
 gem "sqlite3-ruby"
 gem "rake"
+gem "ruby-github"
 
 group :test do
   gem "rspec-rails"
