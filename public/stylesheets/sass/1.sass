@@ -9,17 +9,26 @@ body
   :margin-top 20px
   :width 800px
 
-h1
-  :font-size 1.6em
+#header
+  :margin 0 0 40px 0
+  h1
+    :font-size 1.6em
 
-h2
-  :font-size 1.4em
+section
+  h1
+    :font-size 1.4em
 ul
   :width 100%
   :float left
   :list-style none
   li
     :margin 0 0 10px 0
+
+ul.groups
+  :display block
+  li
+    :display inline
+    :margin-right 20px
 
 
 ul.block
@@ -33,6 +42,22 @@ label
   :font-weight bold
   :float left
   :width 200px
+  span
+    :float left
+    a
+      :clear both
+      :margin-right 20px
+      :font-weight normal
+
+h1
+  a
+    :background-color #f1006c
+    :color #fff
+    :text-decoration underline
+  a:hover
+    :background-color #fff
+    :color #f1006c
 
 a
   :text-decoration none
+  :color #f1006c

@@ -1,22 +1,67 @@
-%ul.block
-  %li= link_to "Blog", "http://blog.beilabs.com"
-  %li= link_to "Twitter", "http://www.twitter.com/beilabs"
-  %li= link_to "GitHub", "http://www.github.com/beilabs"
-  %li= link_to "Last.Fm", "http://www.last.fm/user/jonathan-clarke"
-  %li= link_to "Facebook", "http://www.facebook.com/clarke.jonathan"
+%section
+  %h1 My stuff on the web
+  %ul.block
+    %li= link_to "Blog", "http://blog.beilabs.com"
+    %li= link_to "Twitter", "http://www.twitter.com/beilabs"
+    %li= link_to "GitHub", "http://www.github.com/beilabs"
+    %li= link_to "Linked-in", "http://au.linkedin.com/in/jonathanclarkeireland"
+    %li= link_to "Last.Fm", "http://www.last.fm/user/jonathan-clarke"
+    %li= link_to "Facebook", "http://www.facebook.com/clarke.jonathan"
 
-%h2 My Startup
-%ul
-  %li= link_to "GiveFoo", "http://www.givefoo.com"
+%section
+  %h1 My startup
+  %ul
+    %li
+      = link_to "GiveFoo", "http://www.givefoo.com"
+      &nbsp;&ndash;&nbsp;E-Commerce for the developing world
+      %span
+        ( October 2010 )
 
-%h2 Get in touch
-%ul
-  %li
-    %label Email:
-    = link_to "jonathan@beilabs.com", "mailto:jonathan@beilabs.com"
-  %li
-    %label Google Talk:
-    = link_to "jonathan@beilabs.com", "jonathan@beilabs.com"
-  %li
-    %label Skype:
-    = link_to "jonathan.givefoo.com", "jonathan.givefoo.com"
+%section
+  %h1 Get in touch
+  %ul.block
+    %li
+      %label
+        Email:
+        %span= link_to "jonathan@beilabs.com", "mailto:jonathan@beilabs.com"
+      %li
+        %label
+          Skype:
+          %span= link_to "jonathan.givefoo.com", "jonathan.givefoo.com"
+
+%section
+  %h1 Where am I?
+  %p
+    Right now I am in Sydney, Australia wrapping up my thesis and finishing up my MSc. from
+    = link_to "NUI Galway", "http://www.nuigalway.ie"
+
+%section
+  %h1 I have been working for:
+  %ul.block
+    %li= link_to "Westwick-Farrow (Current)", "http://www.westwick-farrow.com.au"
+    %li= link_to "Arvato Finance", "http://www.arvato.ie"
+    %li= link_to "Dalian Hi-Think", "http://www.dhc.com.cn"
+    %li= link_to "Client Logic (Sitel)", "http://sitel.com"
+    %li= link_to "Euro Languages College", "htt://www.eurolanguagescollege.ie"
+
+
+
+%section
+  %h1 I'm a member of these amazing groups
+  %ul.block
+    %li= link_to "Ruby Ireland", "http://groups.google.com/group/ruby_ireland"
+    %li= link_to "Ruby on Rails Oceania", "http://groups.google.com/group/rails-oceania"
+    %li= link_to "Lean Startup Circle", "http://groups.google.com/group/leanstartupcirclesydney"
+    %li= link_to "Silicon Beach", "http://groups.google.com/group/silicon-beach-australia"
+
+%section
+  %h1 I love to use these tools
+  %ul.block
+    %li= link_to "HTML5", "http://www.whatwg.org"
+    %li= link_to "Ruby", "http://www.ruby.org"
+    %li= link_to "Rails", "http://www.rubyonrails.com"
+    %li= link_to "Sinatra", "http://www.sinatrarb.com"
+    %li= link_to "JQuery", "http://www.jquery.com"
+    %li= link_to "RSpec", "http://www.spec.info"
+    %li= link_to "Cucumber", "http://www.cukes.info"
+    %li= link_to "Sass/Haml", "http://haml-lang.com"
