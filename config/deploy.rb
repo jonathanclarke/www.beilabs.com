@@ -16,7 +16,7 @@ role :web, "beilabs.com"                          # Your HTTP server, Apache/etc
 role :app, "beilabs.com"                          # This may be the same as your `Web` server
 role :db,  "beilabs.com", :primary => true        # This is where Rails migrations will run
 
-after "deploy:update_code", "bundler:bundle_new_release", "deploy:symbolic_links", "misc:update_last_commit"
+after "deploy:update_code", "bundler:bundle_new_release", "deploy:symbolic_links"
 
 namespace :deploy do
   task :start do ; end
@@ -31,12 +31,6 @@ namespace :deploy do
   end
 end
 
-namespace :misc do
-  task :update_last_commit, :roles => :app do
-    Meta.last_commit
-  end
-end
-
 namespace :bundler do
   task :create_symlink, :roles => :app do
     shared_dir = File.join(shared_path, 'bundle')
@@ -44,6 +38,7 @@ namespace :bundler do
     run("mkdir -p #{shared_dir}")
     run "ln -nfs #{shared_path}/bundle #{release_path}/.bundle"
     run "ln -nfs #{shared_path}/bundler_gems #{release_path}/vendor/bundler_gems"
+    run "ln -nfs #{shared_path}/config/_analytics.html.erb #{release_path}/app/views/shared/_analytics.html.erb"
   end
 
   task :bundle_new_release, :roles => :app do
