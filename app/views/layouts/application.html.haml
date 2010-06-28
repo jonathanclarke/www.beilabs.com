@@ -1,7 +1,13 @@
 !!! Strict
 %html
   %head
-    %meta{ :"http-equiv" => 'Content-Type', :content => 'text/html;charset=utf-8' }
+    %meta{ :charset => "utf-8" }
+    %meta{ :content => "A Sydney based Irish ruby developer who loves the web, engineering and all things charitable", :name => "description" }
+    %meta{ :content => "ruby, developer, backend, scalable, development, architecture, testing, test driven, sydney, australia, ireland, jonathan, jonathan clarke, beilabs, givefoo", :name => "keywords" }
+
+    %meta{ :content => "Jonathan Clarke", :name => "author" }
+    %meta{ :content => "index, follow", :name => "robots" }
+
     %title= "www.beilabs.com ::: Jonathan Clarke"
     = stylesheet_link_tag "reset", "1"
     = yield :css
