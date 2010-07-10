@@ -38,6 +38,7 @@ namespace :bundler do
     run("mkdir -p #{shared_dir}")
     run "ln -nfs #{shared_path}/bundle #{release_path}/.bundle"
     run "ln -nfs #{shared_path}/bundler_gems #{release_path}/vendor/bundler_gems"
+    run "rm #{release_path}/app/views/shared/_analytics.html.erb"
     run "ln -nfs #{shared_path}/config/_analytics.html.erb #{release_path}/app/views/shared/_analytics.html.erb"
   end
 
