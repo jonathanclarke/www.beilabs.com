@@ -1,6 +1,7 @@
 
 set :stages, %w(staging production)
 set :default_stage, "production"
+set :deploy_via, :remote_cache
 require 'capistrano/ext/multistage'
 
 set :application, "beilabs.com"
