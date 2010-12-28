@@ -1,0 +1,7 @@
+development:
+  source_name: posts@beilabs.com
+  source_host: imap.gmail.com
+  source_port: 993
+  source_ssl: true
+  source_user:
+  source_pass:

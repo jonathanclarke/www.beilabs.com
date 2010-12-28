@@ -41,6 +41,8 @@ namespace :bundler do
     run "ln -nfs #{shared_path}/bundler_gems #{release_path}/vendor/bundler_gems"
     run "rm #{release_path}/app/views/shared/_analytics.html.erb"
     run "ln -nfs #{shared_path}/config/_analytics.html.erb #{release_path}/app/views/shared/_analytics.html.erb"
+    run "rm #{release_path}/config/config.yml"
+    run "ln -nfs #{shared_path}/config/config.yml #{release_path}/config/config.yml"
   end
 
   task :bundle_new_release, :roles => :app do
