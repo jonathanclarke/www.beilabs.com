@@ -18,7 +18,21 @@
       = link_to "GiveFoo", "http://www.givefoo.com"
       &nbsp;&ndash;&nbsp;E-Commerce for the developing world
       %span
-        ( Early 2011 )
+        ( 2011 )
+
+
+%section
+  %h1
+    My musings
+  - if Post.latest.size==0
+    %p No musings yet.
+  - else
+    %ul
+      - Post.latest.each do |post|
+        %li
+          %span.date
+            = nice_date( post.created_at )
+          = link_to post.title, post_path(post)
 
 %section
   %h1 Get in touch
