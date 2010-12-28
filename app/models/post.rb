@@ -22,7 +22,6 @@ class Post < ActiveRecord::Base
   #Fetch unread emails and insert them into the database.
   def self.fetch
     puts "Connecting..."
-
     source = Net::IMAP.new(Configuration.source_host, Configuration.source_port, Configuration.source_ssl)
 
     puts "Logging in..."
@@ -55,7 +54,7 @@ class Post < ActiveRecord::Base
     @post = Post.new
     @post.title = mail.subject
     @post.from = mail.from
-    @post.content = mail.html_part.body
+    @post.content = mail.html_part.body.decoded
 
     begin
       @post.save
