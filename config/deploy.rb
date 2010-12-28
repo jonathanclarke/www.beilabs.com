@@ -43,6 +43,7 @@ namespace :bundler do
     run "ln -nfs #{shared_path}/config/_analytics.html.erb #{release_path}/app/views/shared/_analytics.html.erb"
     run "rm #{release_path}/config/config.yml"
     run "ln -nfs #{shared_path}/config/config.yml #{release_path}/config/config.yml"
+    run "cd #{release_path} && RAILS_ENV=production bundle exec script/runner Meta.last_commit"
   end
 
   task :bundle_new_release, :roles => :app do
