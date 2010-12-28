@@ -1,0 +1,111 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    actionmailer (2.3.5)
+      actionpack (= 2.3.5)
+    actionpack (2.3.5)
+      activesupport (= 2.3.5)
+      rack (~> 1.0.0)
+    activerecord (2.3.5)
+      activesupport (= 2.3.5)
+    activeresource (2.3.5)
+      activesupport (= 2.3.5)
+    activesupport (2.3.5)
+    builder (3.0.0)
+    capybara (0.4.0)
+      celerity (>= 0.7.9)
+      culerity (>= 0.2.4)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (>= 0.0.27)
+      xpath (~> 0.1.2)
+    celerity (0.8.6)
+    childprocess (0.1.6)
+      ffi (~> 0.6.3)
+    cucumber (0.10.0)
+      builder (>= 2.1.2)
+      diff-lcs (~> 1.1.2)
+      gherkin (~> 2.3.2)
+      json (~> 1.4.6)
+      term-ansicolor (~> 1.0.5)
+    cucumber-rails (0.3.2)
+      cucumber (>= 0.8.0)
+    culerity (0.2.13)
+    database_cleaner (0.6.0)
+    diff-lcs (1.1.2)
+    ffi (0.6.3)
+      rake (>= 0.8.7)
+    gherkin (2.3.3)
+      json (~> 1.4.6)
+    haml (3.0.25)
+    hoe (2.8.0)
+      rake (>= 0.8.7)
+    json (1.4.6)
+    json_pure (1.4.6)
+    mail (2.2.1)
+      activesupport (>= 2.3.4)
+      mime-types
+      treetop (>= 1.4.5)
+    mash (0.1.1)
+    mime-types (1.16)
+    nokogiri (1.4.4)
+    pg (0.10.0)
+    polyglot (0.3.1)
+    rack (1.0.1)
+    rack-test (0.5.6)
+      rack (>= 1.0)
+    rails (2.3.5)
+      actionmailer (= 2.3.5)
+      actionpack (= 2.3.5)
+      activerecord (= 2.3.5)
+      activeresource (= 2.3.5)
+      activesupport (= 2.3.5)
+      rake (>= 0.8.3)
+    rake (0.8.7)
+    rspec (2.1.0)
+      rspec-core (~> 2.1.0)
+      rspec-expectations (~> 2.1.0)
+      rspec-mocks (~> 2.1.0)
+    rspec-core (2.1.0)
+    rspec-expectations (2.1.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.1.0)
+    rspec-rails (2.1.0)
+      rspec (~> 2.1.0)
+    ruby-github (0.0.3)
+      hoe (>= 1.5.1)
+      json
+      mash (>= 0.0.3)
+    rubyzip (0.9.4)
+    selenium-webdriver (0.1.2)
+      childprocess (~> 0.1.5)
+      ffi (~> 0.6.3)
+      json_pure
+      rubyzip
+    sqlite3-ruby (1.3.2)
+    term-ansicolor (1.0.5)
+    treetop (1.4.9)
+      polyglot (>= 0.3.1)
+    validator.nu (0.0.4)
+    xpath (0.1.2)
+      nokogiri (~> 1.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  capybara
+  cucumber-rails
+  database_cleaner
+  haml
+  mail
+  pg
+  rails (= 2.3.5)
+  rake
+  rspec
+  rspec-rails
+  ruby-github
+  sqlite3-ruby
+  validator.nu

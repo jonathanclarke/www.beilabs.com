@@ -6,6 +6,8 @@ gem "haml"
 gem "sqlite3-ruby"
 gem "rake"
 gem "ruby-github"
+gem "pg"
+gem "mail"
 
 group :test do
   gem "rspec-rails"
