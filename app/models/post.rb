@@ -32,11 +32,13 @@ class Post < ActiveRecord::Base
       source.select('INBOX')
       source.search(["NOT", "DELETED"]).each do |message_id|
         msg = source.fetch(message_id, "RFC822")[0].attr["RFC822"]
-        Post.insert(msg)
-
-        source.copy(message_id, 'COMPLETE')
-        puts "Message moved to COMPLETE"
-        source.store(message_id, "+FLAGS", [:Deleted]) if RAILS_ENV=="production"
+        mail = Mail.new(msg)
+        if mail.from == "jonathan@beilabs.com"
+          Post.insert(mail)
+          source.copy(message_id, 'COMPLETE')
+          puts "Message moved to COMPLETE"
+          source.store(message_id, "+FLAGS", [:Deleted]) if RAILS_ENV=="production"
+        end
       end
     rescue => e
       puts "Error: #{ e }"
@@ -47,9 +49,8 @@ class Post < ActiveRecord::Base
   end
 
   #Insert the email into the database
-  def self.insert(msg)
+  def self.insert(mail)
     puts "Displaying the message"
-    mail = Mail.new(msg)
 
     @post = Post.new
     @post.title = mail.subject
