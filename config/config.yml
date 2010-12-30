@@ -3,5 +3,22 @@ development:
   source_host: imap.gmail.com
   source_port: 993
   source_ssl: true
-  source_user:
-  source_pass:
+  source_user: posts@beilabs.com
+  source_pass: tv5I4A519ZyVjUJK03Bu
+
+test:
+  source_name: posts@beilabs.com
+  source_host: imap.gmail.com
+  source_port: 993
+  source_ssl: true
+  source_user: posts@beilabs.com
+  source_pass: tv5I4A519ZyVjUJK03Bu
+
+production:
+  source_name: posts@beilabs.com
+  source_host: imap.gmail.com
+  source_port: 993
+  sourcel_ssl: true
+  source_user: posts@beilabs.com
+  source_pass: tv5I4A519ZyVjUJK03Bu
+
