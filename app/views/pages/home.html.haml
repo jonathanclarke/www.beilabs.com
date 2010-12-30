@@ -24,6 +24,9 @@
 %section
   %h1
     My musings
+    %span
+      = link_to "read everything".html_safe, posts_path
+
   - if Post.latest.size==0
     %p No musings yet.
   - else
