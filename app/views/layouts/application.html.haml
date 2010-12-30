@@ -9,7 +9,8 @@
     %meta{ :content => "index, follow", :name => "robots" }
 
     %title= "www.beilabs.com ::: Jonathan Clarke"
-    = stylesheet_link_tag "reset", "1"
+    = stylesheet_link_tag "reset"
+    = stylesheet_link_tag "1"
     = yield :css
   %body
     #wrapper
@@ -17,5 +18,5 @@
       = render :partial => "shared/content"
       = render :partial => "shared/footer"
     = yield :js
-    - if RAILS_ENV=="production"
+    - if Rails.env == "production"
       = render :partial => "shared/analytics"
