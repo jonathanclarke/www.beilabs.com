@@ -1,7 +1,7 @@
 %h2= link_to @post.title, post_path(@post)
 
 %section.content
-  = @post.content
+  = @post.content.html_safe
 
 %section.comments
   = render :partial => "shared/disqus"
