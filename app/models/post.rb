@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
   before_update :set_permalink
   before_save :set_permalink
 
-  named_scope :latest, :order => "created_at DESC", :limit => 5
+  scope :latest, :order => "created_at DESC", :limit => 5
 
   def set_permalink
     self.permalink = "#{ rand(Time.zone.now.to_i) }-#{ (title.downcase.gsub(/[^a-z0-9]+/i, '-')) }"
@@ -22,10 +22,10 @@ class Post < ActiveRecord::Base
   #Fetch unread emails and insert them into the database.
   def self.fetch
     puts "Connecting..."
-    source = Net::IMAP.new(Configuration.source_host, Configuration.source_port, Configuration.source_ssl)
+    source = Net::IMAP.new(APP_CONFIG['source_host'], APP_CONFIG['source_port'], APP_CONFIG['source_ssl'])
 
     puts "Logging in..."
-    source.login(Configuration.source_user, Configuration.source_pass)
+    source.login(APP_CONFIG['source_user'], APP_CONFIG['source_pass'])
 
     begin
       puts "Selecting Inbox..."
@@ -37,7 +37,7 @@ class Post < ActiveRecord::Base
           Post.insert(mail)
           source.copy(message_id, 'COMPLETE')
           puts "Message moved to COMPLETE"
-          source.store(message_id, "+FLAGS", [:Deleted]) if RAILS_ENV=="production"
+          source.store(message_id, "+FLAGS", [:Deleted]) if Rails.env == "production"
         end
       end
     rescue => e
