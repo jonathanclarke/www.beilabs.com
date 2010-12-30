@@ -1,0 +1,12 @@
+%section
+  %h2
+    All of my musings
+  - if Post.latest.size==0
+    %p No musings yet.
+  - else
+    %ul
+      - Post.latest.each do |post|
+        %li
+          %span.date
+            = nice_date( post.created_at )
+          = link_to post.title, post_path(post)
