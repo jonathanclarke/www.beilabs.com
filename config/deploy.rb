@@ -18,7 +18,7 @@ role :web, "beilabs.com"                          # Your HTTP server, Apache/etc
 role :app, "beilabs.com"                          # This may be the same as your `Web` server
 role :db,  "beilabs.com", :primary => true        # This is where Rails migrations will run
 
-after "deploy:symbolic_links"
+
 
 namespace :deploy do
   task :start do ; end
@@ -28,7 +28,7 @@ namespace :deploy do
   end
 
   desc "Make symlink for database yaml"
-  task :symbolic_links do
+  task :after_default do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "rm #{release_path}/app/views/shared/_analytics.html.erb"
     run "ln -nfs #{shared_path}/config/_analytics.html.erb #{release_path}/app/views/shared/_analytics.html.erb"
