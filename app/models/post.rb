@@ -33,7 +33,7 @@ class Post < ActiveRecord::Base
       source.search(["NOT", "DELETED"]).each do |message_id|
         msg = source.fetch(message_id, "RFC822")[0].attr["RFC822"]
         mail = Mail.new(msg)
-        if mail.from == "jonathan@beilabs.com"
+        if mail.from.include?("jonathan@beilabs.com")
           Post.insert(mail)
           source.copy(message_id, 'COMPLETE')
           puts "Message moved to COMPLETE"
