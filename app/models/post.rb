@@ -37,7 +37,7 @@ class Post < ActiveRecord::Base
           Post.insert(mail)
           source.copy(message_id, 'COMPLETE')
           puts "Message moved to COMPLETE"
-          source.store(message_id, "+FLAGS", [:Deleted]) if Rails.env == "production"
+          source.store(message_id, "+FLAGS", [:Deleted])
         end
       end
     rescue => e

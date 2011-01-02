@@ -32,7 +32,7 @@
   - else
     %ul
       - Post.latest.each do |post|
-        %li
+        %li.post
           %span.date
             = nice_date( post.created_at )
           = link_to post.title, post_path(post)
