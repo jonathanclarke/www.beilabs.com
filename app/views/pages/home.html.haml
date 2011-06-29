@@ -8,11 +8,9 @@
     %li= link_to "Last.Fm", "http://www.last.fm/user/jonathan-clarke"
     %li= link_to "Facebook", "http://www.facebook.com/clarke.jonathan"
 
-%section
+%section{ :id => "musings" }
   %h1
     My musings
-    %span
-      = link_to "read everything".html_safe, posts_path
 
   - if Post.latest.size==0
     %p No musings yet.
@@ -24,17 +22,11 @@
             = nice_date( post.created_at )
           = link_to post.title, post_path(post)
 
-%section
+%section{ :id => "get_in_touch" }
   %h1 Get in touch
   %ul
-    %li
-      %label
-        Email:
-        %span= link_to "jonathan@beilabs.com", "mailto:jonathan@beilabs.com"
-    %li
-      %label
-        Skype:
-        %span= link_to "jonathan-beilabs", "skype://jonathan-beilabs"
+    %li= link_to "jonathan@beilabs.com", "mailto:jonathan@beilabs.com"
+    %li= link_to "skype://jonathan-beilabs", "skype://jonathan-beilabs"
 
 %section
   %h1 I have been working for:
