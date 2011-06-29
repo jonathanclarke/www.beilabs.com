@@ -11,7 +11,7 @@ gem "mail"
 group :test do
   gem "validator.nu"
   gem "capybara"
-  gem "rspec-rails", ">=2.0.1"
+  # gem 'rspec-rails', '>= 2.0.0.beta.10'
   gem "rcov"
   gem 'machinist', '>= 2.0.0.beta1'
   gem 'faker'
