@@ -7,6 +7,9 @@ gem "sqlite3-ruby"
 gem "ruby-github"
 gem "pg"
 gem "mail"
+gem "capistrano"
+gem "capistrano-ext"
+
 #gem 'rails-upgrade'
 group :test do
   gem "validator.nu"
